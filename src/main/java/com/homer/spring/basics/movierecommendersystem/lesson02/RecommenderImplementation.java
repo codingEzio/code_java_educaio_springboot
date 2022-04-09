@@ -1,9 +1,14 @@
 package com.homer.spring.basics.movierecommendersystem.lesson02;
 
 public class RecommenderImplementation {
-	public String[] recommendMovies(String movie) {
-		CollaborativeFilter filter = new CollaborativeFilter();
+	private Filter filter;
 
-		return filter.getRecommendations("test");
+	public RecommenderImplementation (Filter filter) {
+		super();
+		this.filter = filter;
+	}
+
+	public String[] recommendMovies(String movie) {
+		// pass
 	}
 }
