@@ -1,5 +1,8 @@
 package com.homer.spring.basics.movierecommendersystem.lesson03;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ContentBasedFilter implements Filter {
 	public String[] getRecommendations(String movie) {
 		// Implement logic of content based filter

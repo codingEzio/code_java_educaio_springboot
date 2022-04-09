@@ -1,5 +1,8 @@
 package com.homer.spring.basics.movierecommendersystem.lesson03;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RecommenderImplementation {
 	private Filter filter;
 
