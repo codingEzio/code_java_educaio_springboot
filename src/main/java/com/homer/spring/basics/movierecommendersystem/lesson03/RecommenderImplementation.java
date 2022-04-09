@@ -1,9 +1,13 @@
 package com.homer.spring.basics.movierecommendersystem.lesson03;
 
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
 public class RecommenderImplementation {
+
+	// mark Filter as one of the dependency of the RecommenderImplementation
+	@Autowired
 	private Filter filter;
 
 	public RecommenderImplementation(Filter filter) {
