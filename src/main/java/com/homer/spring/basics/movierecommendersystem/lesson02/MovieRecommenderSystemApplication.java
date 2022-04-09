@@ -11,7 +11,9 @@ public class MovieRecommenderSystemApplication {
 	public static void main(String[] args) {
 		// SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-		RecommenderImplementation recommender = new RecommenderImplementation();
+		RecommenderImplementation recommender = new RecommenderImplementation(
+				new ContentBasedFilter()
+		);
 		String[] result = recommender.recommendMovies("test");
 
 		System.out.println(Arrays.toString(result));
