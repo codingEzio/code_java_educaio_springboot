@@ -20,6 +20,7 @@ public class MovieRecommenderSystemApplication {
 	public static void main(String[] args) {
 
 		// Now it manages the Beans and dependencies (both were marked by annotations)
+		// ApplicationContext is an interface for providing configuration info to an app
 		ApplicationContext appContext = SpringApplication.run(
 				MovieRecommenderSystemApplication.class, args
 		);
