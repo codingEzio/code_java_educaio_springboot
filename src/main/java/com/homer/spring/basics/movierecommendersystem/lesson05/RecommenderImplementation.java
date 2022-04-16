@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Component
 public class RecommenderImplementation {
 
-	// mark Filter as one of the dependency of the RecommenderImplementation
+	// Here the 'camelCaseFilter' would match the 'CamelCaseFilter' impl
 	@Autowired
-	private Filter filter;
+	private Filter collaborativeFilter;
 
-	public RecommenderImplementation(Filter filter) {
-		super();
-		this.filter = filter;
-	}
+	// Removed the bare-bone constructor (for 'Filter filter')
+
+	// Now use 'variable name <> bean name' (by Name) to choose filters
+	// Bad hidden magic for newcomers, yet simple and elegant (DRY-wise)
 
 	public String[] recommendMovies(String movie) {
 		// now the upper class determine which filters to use
-		System.out.println("\n" + "Name of the filter in use: " + filter);
+		System.out.println("\n" + "Name of the filter in use: " + collaborativeFilter);
 
-		return filter.getRecommendations("Interstellar");
+		return collaborativeFilter.getRecommendations("Interstellar");
 	}
 }

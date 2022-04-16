@@ -1,5 +1,6 @@
 package com.homer.spring.basics.movierecommendersystem.lesson05;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
