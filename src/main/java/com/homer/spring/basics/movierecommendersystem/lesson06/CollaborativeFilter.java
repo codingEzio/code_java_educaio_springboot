@@ -1,5 +1,6 @@
 package com.homer.spring.basics.movierecommendersystem.lesson06;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 // - @Primary has higher priority than 'by Name'
 // - @Primary would ALWAYS give ONE bean PRIORITY (by Name is flexible)
 @Component
+@Qualifier("CollabF")
 //@Primary
 public class CollaborativeFilter implements Filter {
 	public String[] getRecommendations(String movie) {
