@@ -17,7 +17,7 @@ public class RecommenderImplementation {
 
 	public String[] recommendMovies(String movie) {
 		// now the upper class determine which filters to use
-		System.out.println("Name of the filter in use: " + filter + "\n");
+		System.out.println("\n" + "Name of the filter in use: " + filter);
 
 		return filter.getRecommendations("Interstellar");
 	}
