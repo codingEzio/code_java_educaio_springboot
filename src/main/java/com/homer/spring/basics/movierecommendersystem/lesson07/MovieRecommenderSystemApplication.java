@@ -10,15 +10,20 @@ import java.util.Arrays;
 public class MovieRecommenderSystemApplication {
 
 	public static void main(String[] args) {
-
 		ApplicationContext appContext = SpringApplication.run(
 				MovieRecommenderSystemApplication.class, args
 		);
 
-		RecommenderImplementation recommender = appContext.getBean(
-				RecommenderImplementation.class
-		);
+		// Constructor injection
+		// RecommenderImplementation recommender = appContext.getBean(
+		// 		RecommenderImplementation.class
+		// );
+		// String[] result = recommender.recommendMovies("test");
 
+		// Setter injection
+		RecommenderImplementation2 recommender = appContext.getBean(
+				RecommenderImplementation2.class
+		);
 		String[] result = recommender.recommendMovies("test");
 
 		System.out.println(Arrays.toString(result));
