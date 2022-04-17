@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class RecommenderImplementation {
 	private Filter filter;
 
+	// Previously we auto-wire dependencies by adding annotations above
+	// the Filter initiation. Now we directly "choose" which filters to
+	// use in the implementation level (at least from my point of view).
 	@Autowired
 	public RecommenderImplementation(@Qualifier("CollabF") Filter filter) {
 		this.filter = filter;
