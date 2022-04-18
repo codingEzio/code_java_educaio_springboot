@@ -11,6 +11,11 @@ public class RecommenderImplementation {
 	// Previously we auto-wire dependencies by adding annotations above
 	// the Filter initiation. Now we directly "choose" which filters to
 	// use in the implementation level (at least from my point of view).
+	//
+	// Refer to https://stackoverflow.com/a/51670384/6273859
+	// Rule of thumb of choosing between constructor DI and setter DI
+	// - Constructor DI for mandatory dependencies (when context is loaded)
+	// - Setter      DI for optional dependencies (load when needed)
 	@Autowired
 	public RecommenderImplementation(@Qualifier("CollabF") Filter filter) {
 		this.filter = filter;
