@@ -15,18 +15,19 @@ public class MovieRecommenderSystemApplication {
 		);
 
 		// Constructor injection
-		// RecommenderImplementation recommender = appContext.getBean(
-		// 		RecommenderImplementation.class
-		// );
-		// String[] result = recommender.recommendMovies("test");
-
-		// Setter injection
-		RecommenderImplementation2 recommender = appContext.getBean(
-				RecommenderImplementation2.class
+		RecommenderImplementation recommender = appContext.getBean(
+				RecommenderImplementation.class
 		);
 		String[] result = recommender.recommendMovies("test");
-
 		System.out.println(Arrays.toString(result));
+
+		// Setter injection
+		RecommenderImplementation2 recommender2 = appContext.getBean(
+				RecommenderImplementation2.class
+		);
+		String[] result2 = recommender.recommendMovies("test");
+
+		System.out.println(Arrays.toString(result2));
 	}
 
 }
